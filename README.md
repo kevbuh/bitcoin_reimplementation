@@ -1,1 +1,56 @@
 # bitcoin_reimplementation
+
+Reimplementation of Bitcoin in Python from scratch
+
+# Sources:
+
+- https://bitcoin.org/bitcoin.pdf
+- http://karpathy.github.io/2021/06/21/blockchain/
+- https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf
+
+# Notes:
+
+Elliptic Curves
+
+the set of points described by the equation: y^2 = x^3 + ax + b
+symmetric about the -axis
+an approach to public-key cryptography
+can be used for encryption by combining the key agreement with a symmetric encryption scheme
+Bitcoin uses the secp256k1 curve
+
+Used for public and private keys in bitcoin
+Public Key
+uses publicly known and agreed on constants
+point on the curve that results from adding the generator point to itself secret_key times
+tuple (x,y) on generator curve
+
+Private Key
+"The private key is simply a random integer that satisfies 1 <= key < n (recall n is the order of G)"
+anyone who knows it can control all of the funds you own on the Bitcoin blockchain, associated with it.
+integer
+
+Bitcoin Wallet
+type of digital wallet used to send and receive Bitcoins
+stores the cryptographic information used to access Bitcoin addresses and send transactions.
+
+Hash Functions
+Useful in the generation and verification of digital signatures and message authentication codes, and in the generation of random numbers or bits.
+
+SHA256
+SHA256 process a message to produce a condensed representation called a message digest.
+two stages: preprocessing and hash computation
+core element in Bitcoin's Proof of Work
+POW goal is to modify the block of transactions until the whole thing hashes to a sufficiently low number (when the bytes of the digest are interpreted as a number)
+SHA Algo:
+
+- Takes bytes to be hashed
+- Pads the message
+- Breaks it up into chunks
+- Passes chunks into a fancy "bit mixer"
+- Creates fixed sized hash
+  Double Hash
+  SHA256 hash of a hash
+
+RIPEMD-160
+used because it produces the shortest hashes whose uniqueness is still sufficiently assured. This allows Bitcoin addresses to be shorter
+Double SHA256 hashes are often used in place of a single hash in Bitcoin for added security, to mitigate a few shortcomings of just one round of SHA256, and some related attacks discovered on the older version of SHA (SHA-1).
