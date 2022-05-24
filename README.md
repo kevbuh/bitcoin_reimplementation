@@ -14,6 +14,8 @@ Reimplementation of Bitcoin in Python from scratch. Lots of help from Wikipedia,
 
 ### Elliptic Curves:
 
+![Elliptic Curve](./secp256pk.png "Elliptic Curve")
+
 - the set of points described by the equation: y^2 = x^3 + ax + b
 - symmetric about the -axis
 - an approach to public-key cryptography
